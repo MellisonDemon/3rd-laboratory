@@ -128,5 +128,17 @@ int main()
 		cout << *(ptr + a - 1) << " ";
 		if (a % n == 0) { cout << endl; }
 	}
+	
+	//----ПЕРЕСТАНОВКА D----//
+	{
+		for (int i = 0; i < n/2; i ++)
+		{
+			for (int j = 0; j < n/2; j ++)
+			{
+				swap (*(arr+i*10+j), *(arr+i*10+j+n/2));
+				swap (*(arr+i*10+j+10*(n-1)), *(arr+i*10+j+n/2+10*(n-1)));
+			}
+		}
+	}
 	return 0;
 }
