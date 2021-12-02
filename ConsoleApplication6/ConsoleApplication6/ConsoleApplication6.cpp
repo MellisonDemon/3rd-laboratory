@@ -135,8 +135,8 @@ int main()
 		{
 			for (int j = 0; j < n/2; j ++)
 			{
-				swap (*(arr+j+i*n), *(arr+j+i*n+);
-				swap (*(arr+j+i*n+n/2), *(arr+j+i*n+n/2));
+				swap (*(arr+j+i*n), *(arr+j+i*n+n*(n/2));
+				swap (*(arr+j+i*n+n/2), *(arr+j+i*n++n*(n/2)+n/2));
 			}
 		}
 	}
