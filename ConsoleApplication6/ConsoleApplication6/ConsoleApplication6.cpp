@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
 
 int main()
@@ -9,26 +9,23 @@ int main()
 	{
 		for (int j = 0; j < n; j++)
 		{
-			arr[i][j] = i*10 + j;
+			arr[i][j] = 0;
 		}
 	}
-	int *ptr = &arr[0][0];
+	int* ptr = &arr[0][0];
 
-
-	/*{
-		for (int i = 0; i < n / 2; i++)
+	//----ЗАПОЛНЕНИЕ УЛИТКОЙ----//
+	for (int i = 0; i < n / 2; i++)
 		{
-		
+
 			//----1 ВИД СТРОК-----//
 
-		
 			for (int j = 0 + i; j < (n - 1 - i); j++)
 			{
 				*(ptr + j + i * n) = numb;
 				numb += 1;
 			}
 
-		
 			for (int a = 1; a < n*n + 1; a++)
 			{
 				cout << *(ptr + a - 1) << " ";
@@ -36,11 +33,10 @@ int main()
 			}
 			cout << endl;
 
-		
 			//----2 ВИД СТРОК-----//
 
 			pom = -1;
-		
+
 			for (int k = i; k < n - i - 1; k++)
 			{
 				pom += 1;
@@ -48,7 +44,6 @@ int main()
 				numb += 1;
 			}
 
-		
 			for (int a = 1; a < n*n + 1; a++)
 			{
 				cout << *(ptr + a - 1) << " ";
@@ -63,7 +58,6 @@ int main()
 				*(ptr + (n*n - 1) - l - n * i) = numb;
 				numb += 1;
 			}
-
 			for (int a = 1; a < n*n + 1; a++)
 			{
 				cout << *(ptr + a - 1) << " ";
@@ -78,7 +72,6 @@ int main()
 				*(ptr + i + m * n) = numb;
 				numb += 1;
 			}
-
 			for (int a = 1; a < n*n + 1; a++)
 			{
 				cout << *(ptr + a - 1) << " ";
@@ -86,8 +79,9 @@ int main()
 			}
 			cout << endl;
 		}
-	}*/
 
+	/*
+	//----ЗАПОЛНЕНИЕ ЗМЕЙКОЙ----//
 	for (int i = 0; i < n; i++)
 	{
 		if (i % 2 == 0)
@@ -98,7 +92,7 @@ int main()
 				numb += 1;
 			}
 
-			for (int a = 1; a < n*n + 1; a++)
+			for (int a = 1; a < n * n + 1; a++)
 			{
 				cout << *(ptr + a - 1) << " ";
 				if (a % n == 0) { cout << endl; }
@@ -108,13 +102,13 @@ int main()
 
 		else
 		{
-			for (int m = n-1; m > -1; m--)
+			for (int m = n - 1; m > -1; m--)
 			{
 				*(ptr + i + m * n) = numb;
 				numb += 1;
 			}
 
-			for (int a = 1; a < n*n + 1; a++)
+			for (int a = 1; a < n * n + 1; a++)
 			{
 				cout << *(ptr + a - 1) << " ";
 				if (a % n == 0) { cout << endl; }
@@ -123,34 +117,78 @@ int main()
 		}
 	}
 
-	for (int a = 1; a < n*n+1; a++)
+	for (int a = 1; a < n * n + 1; a++)
 	{
 		cout << *(ptr + a - 1) << " ";
 		if (a % n == 0) { cout << endl; }
 	}
-	
-		//----ПЕРЕСТАНОВКА С----//
+
+	//----ПЕРЕСТАНОВКА A----//
 	{
-		for (int i = 0; i < n/2; i ++)
+		for (int i = 0; i < n / 2; i++)
 		{
-			for (int j = 0; j < n/2; j ++)
+			for (int j = 0; j < n / 2; j++)
 			{
-				swap (*(arr+j+i*n), *(arr+j+i*n+n*(n/2));
-				swap (*(arr+j+i*n+n/2), *(arr+j+i*n++n*(n/2)+n/2));
+				swap(*(ptr + j + i * n), *(ptr + j + i * n + (n/2)));
+				swap(*(ptr + j + i * n), *(ptr + j + i * n + (n/2) + (n/2)*n));
+				swap(*(ptr + j + i * n), *(ptr + j + i * n + (n/2)*n));
 			}
 		}
 	}
-	
+
+	//----ПЕРЕСТАНОВКА B----//
+	{
+		for (int i = 0; i < n / 2; i++)
+		{
+			for (int j = 0; j < n / 2; j++)
+			{
+				swap(*(ptr + j + i * n), *(ptr + j + i * n + (n / 2) + (n / 2) * n));
+				swap(*(ptr + j + i * n + (n / 2) * n), *(ptr + j + i * n + (n/2)));
+			}
+		}
+	}
+
+	//----ПЕРЕСТАНОВКА С----//
+	{
+		for (int i = 0; i < n / 2; i++)
+		{
+			for (int j = 0; j < n / 2; j++)
+			{
+				swap(*(ptr + j + i * n), *(ptr + j + i * n + n * (n / 2)));
+				swap(*(ptr + j + i * n + n / 2), *(ptr + j + i * n +n * (n / 2) + n / 2)));
+			}
+		}
+	}
+
 	//----ПЕРЕСТАНОВКА D----//
 	{
-		for (int i = 0; i < n/2; i ++)
+		for (int i = 0; i < n / 2; i++)
 		{
-			for (int j = 0; j < n/2; j ++)
+			for (int j = 0; j < n / 2; j++)
 			{
-				swap (*(arr+i*n+j), *(arr+i*n+j+n/2));
-				swap (*(arr+i*n+j+n*(n/2)), *(arr+i*10+j+n/2+n*(n/2)));
+				swap(*(ptr + i * n + j), *(ptr + i * n + j + n / 2));
+				swap(*(ptr + i * n + j + n * (n / 2)), *(ptr + i * 10 + j + n / 2 + n * (n / 2)));
 			}
 		}
 	}
+
+	*/
+
+	//----СОРТИРОВКА БАБЛ----//
+
+	for (int i = 0; i < n * n; i++) {
+		for (int j = 1; j < (n * n - i); j++)
+		{
+			if (*(ptr + i) > *(ptr + i + j)) { swap((ptr + i), (ptr + i + j)); }
+		}
+	}
+	cout << endl;
+	for (int a = 1; a < n * n + 1; a++)
+	{
+		cout << *(ptr + a - 1) << " ";
+		if (a % n == 0) { cout << endl; }
+	}
+	cout << endl;
+
 	return 0;
 }
