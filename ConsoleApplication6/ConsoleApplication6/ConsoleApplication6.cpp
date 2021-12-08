@@ -3,8 +3,9 @@ using namespace std;
 
 int main()
 {
+
 	int pom;
-	int arr[6][6], n = 6, numb = 11;
+	int arr[10][10], n = 10, numb = 11;
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < n; j++)
@@ -12,7 +13,7 @@ int main()
 			arr[i][j] = 0;
 		}
 	}
-	int* ptr = &arr[0][0];
+	int * ptr = &arr[0][0];
 
 	//----ЗАПОЛНЕНИЕ УЛИТКОЙ----//
 	for (int i = 0; i < n / 2; i++)
@@ -80,8 +81,8 @@ int main()
 			cout << endl;
 		}
 
-	/*
-	//----ЗАПОЛНЕНИЕ ЗМЕЙКОЙ----//
+	
+	/*//----ЗАПОЛНЕНИЕ ЗМЕЙКОЙ----//
 	for (int i = 0; i < n; i++)
 	{
 		if (i % 2 == 0)
@@ -121,19 +122,25 @@ int main()
 	{
 		cout << *(ptr + a - 1) << " ";
 		if (a % n == 0) { cout << endl; }
-	}
+	}*/
 
 	//----ПЕРЕСТАНОВКА A----//
+	for (int i = 0; i < n / 2; i++)
 	{
-		for (int i = 0; i < n / 2; i++)
+		for (int j = 0; j < n / 2; j++)
 		{
-			for (int j = 0; j < n / 2; j++)
-			{
-				swap(*(ptr + j + i * n), *(ptr + j + i * n + (n/2)));
-				swap(*(ptr + j + i * n), *(ptr + j + i * n + (n/2) + (n/2)*n));
-				swap(*(ptr + j + i * n), *(ptr + j + i * n + (n/2)*n));
-			}
+			swap(*(ptr + j + i * n), *(ptr + j + i * n + (n/2)));
+			swap(*(ptr + j + i * n), *(ptr + j + i * n + (n/2) + (n/2)*n));
+			swap(*(ptr + j + i * n), *(ptr + j + i * n + (n/2)*n));
 		}
+	}
+
+	cout << "AAA" << endl;
+
+	for (int a = 1; a < n * n + 1; a++)
+	{
+		cout << *(ptr + a - 1) << " ";
+		if (a % n == 0) { cout << endl; }
 	}
 
 	//----ПЕРЕСТАНОВКА B----//
@@ -148,6 +155,14 @@ int main()
 		}
 	}
 
+	cout << "BBB" << endl;
+
+	for (int a = 1; a < n * n + 1; a++)
+	{
+		cout << *(ptr + a - 1) << " ";
+		if (a % n == 0) { cout << endl; }
+	}
+
 	//----ПЕРЕСТАНОВКА С----//
 	{
 		for (int i = 0; i < n / 2; i++)
@@ -158,6 +173,14 @@ int main()
 				swap(*(ptr + j + i * n + n / 2), *(ptr + j + i * n +n * (n / 2) + n / 2)));
 			}
 		}
+	}
+
+	cout << "CCC" << endl;
+
+	for (int a = 1; a < n * n + 1; a++)
+	{
+		cout << *(ptr + a - 1) << " ";
+		if (a % n == 0) { cout << endl; }
 	}
 
 	//----ПЕРЕСТАНОВКА D----//
@@ -172,9 +195,15 @@ int main()
 		}
 	}
 
-	*/
+	cout << "DDD" << endl;
 
-	//----СОРТИРОВКА БАБЛ----//
+	for (int a = 1; a < n * n + 1; a++)
+	{
+		cout << *(ptr + a - 1) << " ";
+		if (a % n == 0) { cout << endl; }
+	}
+
+	/*//----СОРТИРОВКА БАБЛ----//
 
 	for (int i = 0; i < n * n; i++) {
 		for (int j = 1; j < (n * n - i); j++)
@@ -188,7 +217,7 @@ int main()
 		cout << *(ptr + a - 1) << " ";
 		if (a % n == 0) { cout << endl; }
 	}
-	cout << endl;
+	cout << endl;*/
 
 	return 0;
 }
