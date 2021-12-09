@@ -1,7 +1,8 @@
 #include <iostream>
+#include <ctime>
 using namespace std;
 
-int printing(int ptr)
+int printing(float * ptr, int n)
 {
 	for (int a = 1; a < n * n + 1; a++)
 	{
@@ -16,22 +17,30 @@ int main()
 	setlocale(0, "");
 	srand(time(NULL));
 	int n, pom, numb = 11;
+
 	while (true)
 	{
 		cout << "Введите какого размера создать массив (6, 8, 10): ";
 		cin >> n;
 		if (n != 6 || n != 8 || n != 10) { cout << "Ошибка. Повторите ввод." << endl; }
-		else { float* arr = new float arr[n][n] }
-		for (int i = 0; i < n; i++)
+		else { return 0; }
+	}
+
+	float ** arr = new float *[n];
+	for (int i = 0; i < n; ++i)
+	{
+		arr[i] = new float[n];
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
 		{
-			for (int j = 0; j < n; j++)
-			{
-				arr[i][j] = 0;
-			}
+			arr[i][j] = 0;
 		}
 	}
 	
-	int * ptr = &arr[0][0];
+	float * ptr = &arr[0][0];
 
 	int choise;
 	cout << "Выберите вид заполнения массива:" << endl << "1. Улитка" << endl << "2. Змейка" << endl;
@@ -52,7 +61,7 @@ int main()
 					{
 						*(ptr + j + i * n) = rand();
 					}
-					printing(ptr);
+					printing(ptr, n);
 
 					//----2 ВИД СТРОК-----//
 
@@ -62,7 +71,7 @@ int main()
 						pom += 1;
 						*(ptr + (n - 1) * (i + 1) + n * pom) = rand();
 					}
-					printing(ptr);
+					printing(ptr, n);
 
 					//----3 ВИД СТРОК-----//
 
@@ -70,7 +79,7 @@ int main()
 					{
 						*(ptr + (n * n - 1) - l - n * i) = rand();
 					}
-					printing(ptr);
+					printing(ptr, n);
 
 					//----4 ВИД СТРОК-----//
 
@@ -78,7 +87,7 @@ int main()
 					{
 						*(ptr + i + m * n) = rand();
 					}
-					printing(ptr);
+					printing(ptr, n);
 				}
 			}
 				return 0;
@@ -99,7 +108,7 @@ int main()
 							numb += 1;
 						}
 
-						printing(ptr);
+						printing(ptr, n);
 					}
 
 					else
@@ -110,7 +119,7 @@ int main()
 							numb += 1;
 						}
 
-						printing(ptr);
+						printing(ptr, n);
 					}
 				}
 			}
@@ -133,7 +142,7 @@ int main()
 		cin >> choise;
 		switch (choise)
 		{
-			case(1)
+			case(1):
 			{
 				//----ПЕРЕСТАНОВКА A----//
 				for (int i = 0; i < n / 2; i++)
@@ -145,7 +154,7 @@ int main()
 						swap(*(ptr + j + i * n), *(ptr + j + i * n + (n / 2) * n));
 					}
 				}
-				printing(ptr);
+				printing(ptr, n);
 				break;
 			}
 
@@ -161,7 +170,7 @@ int main()
 						swap(*(ptr + j + i * n + (n / 2) * n), *(ptr + j + i * n + (n / 2)));
 					}
 				}
-				printing(ptr);
+				printing(ptr, n);
 				break;
 			}
 
@@ -173,10 +182,10 @@ int main()
 					for (int j = 0; j < n / 2; j++)
 					{
 						swap(*(ptr + j + i * n), *(ptr + j + i * n + n * (n / 2)));
-						swap(*(ptr + j + i * n + n / 2), *(ptr + j + i * n + n * (n / 2) + n / 2)));
+						swap(*(ptr + j + i * n + n / 2), *(ptr + j + i * n + n * (n / 2) + n / 2));
 					}
 				}
-				printing(ptr);
+				printing(ptr, n);
 				break;
 			}
 
@@ -191,7 +200,7 @@ int main()
 						swap(*(ptr + i * n + j + n * (n / 2)), *(ptr + i * 10 + j + n / 2 + n * (n / 2)));
 					}
 				}
-				printing(ptr);
+				printing(ptr, n);
 				break;
 			}
 
@@ -210,12 +219,11 @@ int main()
 		for (int i = 0; i < n * n; i++) {
 			for (int j = 1; j < (n * n - i); j++)
 			{
-				if (*(ptr + i) > *(ptr + i + j)) { swap((ptr + i), (ptr + i + j)); }
+				if (*(ptr + i) > *(ptr + i + j)) { swap(*(ptr + i), *(ptr + i + j)); }
 			}
 		}
 		cout << endl;
-		
-		printing(ptr)
+		printing(ptr, n);
 	}
 
 	cout << endl << "Выберите действие над массивом:" << endl << "1. Увеличение(+)" << endl << "2. Уменьшение (-)" << endl << "3. Умножение (*)" << endl << "4. Деление (/)" << endl;
@@ -223,56 +231,56 @@ int main()
 	while(true)
 	{
 		cin >> choise;
-		switch(choise):
+		switch(choise)
 		{
 			case(1):
 			{
-				cout >> "Введите число, на которое хотите увеличить элементы массива: "
-				cin << helper 
+				cout << "Введите число, на которое хотите увеличить элементы массива: ";
+				cin >> helper;
 				for (int a = 0; a < n * n; a++)
 				{
 					*(ptr + a) = *(ptr + a) + helper;
 				}
-				printing(ptr);
+				printing(ptr, n);
 				return 0;
 				break;
 			}
 
 			case(2):
 			{
-				cout >> "Введите число, на которое хотите уменьшить элементы массива: "
-					cin << helper
-					for (int a = 0; a < n * n; a++)
-					{
-						*(ptr + a) = *(ptr + a) - helper;
-					}
-				printing(ptr);
+				cout << "Введите число, на которое хотите уменьшить элементы массива: ";
+				cin >> helper;
+				for (int a = 0; a < n * n; a++)
+				{
+					*(ptr + a) = *(ptr + a) - helper;
+				}
+				printing(ptr, n);
 				return 0;
 				break;
 			}
 
 			case(3):
 			{
-				cout >> "Введите число, во сколько раз вы хотите увеличить элементы массива: "
-				cin << helper
+				cout << "Введите число, во сколько раз вы хотите увеличить элементы массива: ";
+				cin >> helper;
 				for (int a = 0; a < n * n; a++)
 				{
 					*(ptr + a) = *(ptr + a) + helper;
 				}
-				printing(ptr);
+				printing(ptr, n);
 				return 0;
 				break;
 			}
 
 			case(4):
 			{
-				cout >> "Введите число, во сколько раз вы хотите уменьшить элементы массива: "
-					cin << helper
-					for (int a = 0; a < n * n; a++)
-					{
-						*(ptr + a) = *(ptr + a) / helper;
-					}
-				printing(ptr);
+				cout << "Введите число, во сколько раз вы хотите уменьшить элементы массива: ";
+				cin >> helper;
+				for (int a = 0; a < n * n; a++)
+				{
+					*(ptr + a) = *(ptr + a) / helper;
+				}
+				printing(ptr, n);
 				return 0;
 				break;
 			}

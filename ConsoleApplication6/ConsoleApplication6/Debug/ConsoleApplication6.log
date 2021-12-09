@@ -1,2 +1,69 @@
 ﻿  ConsoleApplication6.cpp
-c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(173): error C2059: синтаксическая ошибка: )
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(8): error C2100: недопустимое косвенное обращение
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(8): error C2088: <<: недопустимо для class
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(17): error C3861: time: идентификатор не найден
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(24): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "arr"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(24): error C2109: для индекса требуется массив или указатель
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(24): error C2143: синтаксическая ошибка: отсутствие ";" перед "}"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(29): error C2065: arr: необъявленный идентификатор
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(34): error C2065: arr: необъявленный идентификатор
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(55): error C2660: printing: функция не принимает 1 аргументов
+  c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(4): note:  см. объявление "printing"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(65): error C2660: printing: функция не принимает 1 аргументов
+  c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(4): note:  см. объявление "printing"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(73): error C2660: printing: функция не принимает 1 аргументов
+  c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(4): note:  см. объявление "printing"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(81): error C2660: printing: функция не принимает 1 аргументов
+  c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(4): note:  см. объявление "printing"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(102): error C2660: printing: функция не принимает 1 аргументов
+  c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(4): note:  см. объявление "printing"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(113): error C2660: printing: функция не принимает 1 аргументов
+  c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(4): note:  см. объявление "printing"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(139): error C2059: синтаксическая ошибка: for
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(139): error C2143: синтаксическая ошибка: отсутствие ")" перед ";"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(139): error C2065: i: необъявленный идентификатор
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(139): error C2059: синтаксическая ошибка: )
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(141): error C2059: синтаксическая ошибка: for
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(141): error C2143: синтаксическая ошибка: отсутствие ")" перед ";"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(141): error C2065: j: необъявленный идентификатор
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(141): error C2059: синтаксическая ошибка: )
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(143): error C2065: j: необъявленный идентификатор
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(143): error C2065: i: необъявленный идентификатор
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(143): error C2660: std::swap: функция не принимает 1 аргументов
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\exception(316): note:  см. объявление "std::swap"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(143): error C2059: синтаксическая ошибка: ;
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(144): error C2065: j: необъявленный идентификатор
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(144): error C2065: i: необъявленный идентификатор
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(144): error C2660: std::swap: функция не принимает 1 аргументов
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\exception(316): note:  см. объявление "std::swap"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(145): error C2065: j: необъявленный идентификатор
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(145): error C2065: i: необъявленный идентификатор
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(145): error C2660: std::swap: функция не принимает 1 аргументов
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\exception(316): note:  см. объявление "std::swap"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(148): error C2660: printing: функция не принимает 1 аргументов
+  c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(4): note:  см. объявление "printing"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(146): warning C4060: оператор switch не содержит метку "case" или "default"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(149): error C2043: недопустимый break
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(153): error C2059: синтаксическая ошибка: case
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(154): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(168): error C2059: синтаксическая ошибка: case
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(169): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(183): error C2059: синтаксическая ошибка: case
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(184): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(198): error C2321: "default" является ключевым словом и не может использоваться в этом контексте
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(198): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(198): error C2059: синтаксическая ошибка: :
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(199): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(203): error C2059: синтаксическая ошибка: }
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(203): error C2143: синтаксическая ошибка: отсутствие ";" перед "}"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(204): error C2143: синтаксическая ошибка: отсутствие ";" перед "}"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(204): error C2059: синтаксическая ошибка: }
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(209): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(221): error C2143: синтаксическая ошибка: отсутствие ";" перед "<<"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(221): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(223): error C2059: синтаксическая ошибка: while
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(224): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(224): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(288): error C2059: синтаксическая ошибка: return
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(289): error C2059: синтаксическая ошибка: }
+c:\users\надя\documents\github\3rd-laboratory\consoleapplication6\consoleapplication6\consoleapplication6.cpp(289): error C2143: синтаксическая ошибка: отсутствие ";" перед "}"
