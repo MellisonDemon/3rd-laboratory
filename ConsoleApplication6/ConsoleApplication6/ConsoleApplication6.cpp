@@ -22,7 +22,7 @@ int main()
 	{
 		cout << "Введите какого размера создать массив (6, 8, 10): ";
 		cin >> n;
-		if (n != 6 || n != 8 || n != 10) { cout << "Ошибка. Повторите ввод." << endl; }
+		if (n != 6 && n != 8 && n != 10) { cout << "Ошибка. Повторите ввод." << endl; }
 		else { return 0; }
 	}
 
@@ -39,7 +39,7 @@ int main()
 			arr[i][j] = 0;
 		}
 	}
-	
+
 	float * ptr = &arr[0][0];
 
 	int choise;
@@ -49,10 +49,10 @@ int main()
 		cin >> choise;
 		switch (choise)
 		{
-			case (1):
+		case (1):
+		{
+			//----ЗАПОЛНЕНИЕ УЛИТКОЙ----//
 			{
-				//----ЗАПОЛНЕНИЕ УЛИТКОЙ----//
-				{
 				for (int i = 0; i < n / 2; i++)
 				{
 					//----1 ВИД СТРОК-----//
@@ -90,14 +90,14 @@ int main()
 					printing(ptr, n);
 				}
 			}
-				return 0;
-				break;
-			}
+			return 0;
+			break;
+		}
 
-			case(2):
+		case(2):
+		{
+			//----ЗАПОЛНЕНИЕ ЗМЕЙКОЙ----//
 			{
-				//----ЗАПОЛНЕНИЕ ЗМЕЙКОЙ----//
-				{
 				for (int i = 0; i < n; i++)
 				{
 					if (i % 2 == 0)
@@ -123,15 +123,15 @@ int main()
 					}
 				}
 			}
-				return 0;
-				break;
-			}
+			return 0;
+			break;
+		}
 
-			default:
-			{
-				cout << "Ошибка. Повторите ввод.";
-				break;
-			}
+		default:
+		{
+			cout << "Ошибка. Повторите ввод.";
+			break;
+		}
 
 		}
 	}
@@ -142,73 +142,73 @@ int main()
 		cin >> choise;
 		switch (choise)
 		{
-			case(1):
+		case(1):
+		{
+			//----ПЕРЕСТАНОВКА A----//
+			for (int i = 0; i < n / 2; i++)
 			{
-				//----ПЕРЕСТАНОВКА A----//
-				for (int i = 0; i < n / 2; i++)
+				for (int j = 0; j < n / 2; j++)
 				{
-					for (int j = 0; j < n / 2; j++)
-					{
-						swap(*(ptr + j + i * n), *(ptr + j + i * n + (n / 2)));
-						swap(*(ptr + j + i * n), *(ptr + j + i * n + (n / 2) + (n / 2) * n));
-						swap(*(ptr + j + i * n), *(ptr + j + i * n + (n / 2) * n));
-					}
+					swap(*(ptr + j + i * n), *(ptr + j + i * n + (n / 2)));
+					swap(*(ptr + j + i * n), *(ptr + j + i * n + (n / 2) + (n / 2) * n));
+					swap(*(ptr + j + i * n), *(ptr + j + i * n + (n / 2) * n));
 				}
-				printing(ptr, n);
-				break;
 			}
+			printing(ptr, n);
+			break;
+		}
 
 
-			case(2):
+		case(2):
+		{
+			//----ПЕРЕСТАНОВКА B----//
+			for (int i = 0; i < n / 2; i++)
 			{
-				//----ПЕРЕСТАНОВКА B----//
-				for (int i = 0; i < n / 2; i++)
+				for (int j = 0; j < n / 2; j++)
 				{
-					for (int j = 0; j < n / 2; j++)
-					{
-						swap(*(ptr + j + i * n), *(ptr + j + i * n + (n / 2) + (n / 2) * n));
-						swap(*(ptr + j + i * n + (n / 2) * n), *(ptr + j + i * n + (n / 2)));
-					}
+					swap(*(ptr + j + i * n), *(ptr + j + i * n + (n / 2) + (n / 2) * n));
+					swap(*(ptr + j + i * n + (n / 2) * n), *(ptr + j + i * n + (n / 2)));
 				}
-				printing(ptr, n);
-				break;
 			}
+			printing(ptr, n);
+			break;
+		}
 
-			case(3):
+		case(3):
+		{
+			//----ПЕРЕСТАНОВКА С----//
+			for (int i = 0; i < n / 2; i++)
 			{
-				//----ПЕРЕСТАНОВКА С----//
-				for (int i = 0; i < n / 2; i++)
+				for (int j = 0; j < n / 2; j++)
 				{
-					for (int j = 0; j < n / 2; j++)
-					{
-						swap(*(ptr + j + i * n), *(ptr + j + i * n + n * (n / 2)));
-						swap(*(ptr + j + i * n + n / 2), *(ptr + j + i * n + n * (n / 2) + n / 2));
-					}
+					swap(*(ptr + j + i * n), *(ptr + j + i * n + n * (n / 2)));
+					swap(*(ptr + j + i * n + n / 2), *(ptr + j + i * n + n * (n / 2) + n / 2));
 				}
-				printing(ptr, n);
-				break;
 			}
+			printing(ptr, n);
+			break;
+		}
 
-			case(4):
+		case(4):
+		{
+			//----ПЕРЕСТАНОВКА D----//
+			for (int i = 0; i < n / 2; i++)
 			{
-				//----ПЕРЕСТАНОВКА D----//
-				for (int i = 0; i < n / 2; i++)
+				for (int j = 0; j < n / 2; j++)
 				{
-					for (int j = 0; j < n / 2; j++)
-					{
-						swap(*(ptr + i * n + j), *(ptr + i * n + j + n / 2));
-						swap(*(ptr + i * n + j + n * (n / 2)), *(ptr + i * 10 + j + n / 2 + n * (n / 2)));
-					}
+					swap(*(ptr + i * n + j), *(ptr + i * n + j + n / 2));
+					swap(*(ptr + i * n + j + n * (n / 2)), *(ptr + i * 10 + j + n / 2 + n * (n / 2)));
 				}
-				printing(ptr, n);
-				break;
 			}
+			printing(ptr, n);
+			break;
+		}
 
-			default:
-			{
-				cout << "Ошибка. Повторите ввод.";
-				break;
-			}
+		default:
+		{
+			cout << "Ошибка. Повторите ввод.";
+			break;
+		}
 		}
 	}
 
@@ -228,68 +228,68 @@ int main()
 
 	cout << endl << "Выберите действие над массивом:" << endl << "1. Увеличение(+)" << endl << "2. Уменьшение (-)" << endl << "3. Умножение (*)" << endl << "4. Деление (/)" << endl;
 	float helper;
-	while(true)
+	while (true)
 	{
 		cin >> choise;
-		switch(choise)
+		switch (choise)
 		{
-			case(1):
+		case(1):
+		{
+			cout << "Введите число, на которое хотите увеличить элементы массива: ";
+			cin >> helper;
+			for (int a = 0; a < n * n; a++)
 			{
-				cout << "Введите число, на которое хотите увеличить элементы массива: ";
-				cin >> helper;
-				for (int a = 0; a < n * n; a++)
-				{
-					*(ptr + a) = *(ptr + a) + helper;
-				}
-				printing(ptr, n);
-				return 0;
-				break;
+				*(ptr + a) = *(ptr + a) + helper;
 			}
+			printing(ptr, n);
+			return 0;
+			break;
+		}
 
-			case(2):
+		case(2):
+		{
+			cout << "Введите число, на которое хотите уменьшить элементы массива: ";
+			cin >> helper;
+			for (int a = 0; a < n * n; a++)
 			{
-				cout << "Введите число, на которое хотите уменьшить элементы массива: ";
-				cin >> helper;
-				for (int a = 0; a < n * n; a++)
-				{
-					*(ptr + a) = *(ptr + a) - helper;
-				}
-				printing(ptr, n);
-				return 0;
-				break;
+				*(ptr + a) = *(ptr + a) - helper;
 			}
+			printing(ptr, n);
+			return 0;
+			break;
+		}
 
-			case(3):
+		case(3):
+		{
+			cout << "Введите число, во сколько раз вы хотите увеличить элементы массива: ";
+			cin >> helper;
+			for (int a = 0; a < n * n; a++)
 			{
-				cout << "Введите число, во сколько раз вы хотите увеличить элементы массива: ";
-				cin >> helper;
-				for (int a = 0; a < n * n; a++)
-				{
-					*(ptr + a) = *(ptr + a) + helper;
-				}
-				printing(ptr, n);
-				return 0;
-				break;
+				*(ptr + a) = *(ptr + a) + helper;
 			}
+			printing(ptr, n);
+			return 0;
+			break;
+		}
 
-			case(4):
+		case(4):
+		{
+			cout << "Введите число, во сколько раз вы хотите уменьшить элементы массива: ";
+			cin >> helper;
+			for (int a = 0; a < n * n; a++)
 			{
-				cout << "Введите число, во сколько раз вы хотите уменьшить элементы массива: ";
-				cin >> helper;
-				for (int a = 0; a < n * n; a++)
-				{
-					*(ptr + a) = *(ptr + a) / helper;
-				}
-				printing(ptr, n);
-				return 0;
-				break;
+				*(ptr + a) = *(ptr + a) / helper;
 			}
-		
-			default:
-			{
-				cout << "Ошибка. Повторите ввод.";
-				break;
-			}
+			printing(ptr, n);
+			return 0;
+			break;
+		}
+
+		default:
+		{
+			cout << "Ошибка. Повторите ввод.";
+			break;
+		}
 		}
 	}
 
