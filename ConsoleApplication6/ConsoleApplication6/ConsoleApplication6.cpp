@@ -1,8 +1,8 @@
 #include <iostream>
-#include <ctime>
+#include <chrono>
 using namespace std;
 
-int printing(float * ptr, int n)
+void printing(float * ptr, int n)
 {
 	for (int a = 1; a < n * n + 1; a++)
 	{
@@ -14,7 +14,7 @@ int printing(float * ptr, int n)
 
 int main()
 {
-	setlocale(0, "");
+	setlocale(LC_ALL, "Russian");
 	srand(time(NULL));
 	int n, pom, numb = 11;
 
@@ -23,14 +23,16 @@ int main()
 		cout << "Введите какого размера создать массив (6, 8, 10): ";
 		cin >> n;
 		if (n != 6 && n != 8 && n != 10) { cout << "Ошибка. Повторите ввод." << endl; }
-		else { return 0; }
+		else { break; }
 	}
 
 	float ** arr = new float *[n];
-	for (int i = 0; i < n; ++i)
+	for (int i = 0; i < n; i++)
 	{
 		arr[i] = new float[n];
 	}
+
+	float * ptr = &arr[0][0];
 
 	for (int i = 0; i < n; i++)
 	{
@@ -39,8 +41,6 @@ int main()
 			arr[i][j] = 0;
 		}
 	}
-
-	float * ptr = &arr[0][0];
 
 	int choise;
 	cout << "Выберите вид заполнения массива:" << endl << "1. Улитка" << endl << "2. Змейка" << endl;
@@ -52,14 +52,13 @@ int main()
 		case (1):
 		{
 			//----ЗАПОЛНЕНИЕ УЛИТКОЙ----//
-			{
 				for (int i = 0; i < n / 2; i++)
 				{
 					//----1 ВИД СТРОК-----//
 
 					for (int j = 0 + i; j < (n - 1 - i); j++)
 					{
-						*(ptr + j + i * n) = rand();
+						*(ptr + j + i * n) = (rand() % 100);
 					}
 					printing(ptr, n);
 
@@ -69,7 +68,7 @@ int main()
 					for (int k = i; k < n - i - 1; k++)
 					{
 						pom += 1;
-						*(ptr + (n - 1) * (i + 1) + n * pom) = rand();
+						*(ptr + (n - 1) * (i + 1) + n * pom) = (rand() % 100);
 					}
 					printing(ptr, n);
 
@@ -77,7 +76,7 @@ int main()
 
 					for (int l = 0 + i; l < n - 1 - i; l++)
 					{
-						*(ptr + (n * n - 1) - l - n * i) = rand();
+						*(ptr + (n * n - 1) - l - n * i) = (rand() % 100);
 					}
 					printing(ptr, n);
 
@@ -85,12 +84,10 @@ int main()
 
 					for (int m = n - i - 1; m > i; m--)
 					{
-						*(ptr + i + m * n) = rand();
+						*(ptr + i + m * n) = (rand() % 100);
 					}
 					printing(ptr, n);
 				}
-			}
-			return 0;
 			break;
 		}
 
@@ -104,8 +101,7 @@ int main()
 					{
 						for (int j = 0; j < n; j++)
 						{
-							*(ptr + i + j * n) = numb;
-							numb += 1;
+							*(ptr + i + j * n) = (rand() % 100);
 						}
 
 						printing(ptr, n);
@@ -115,15 +111,13 @@ int main()
 					{
 						for (int m = n - 1; m > -1; m--)
 						{
-							*(ptr + i + m * n) = numb;
-							numb += 1;
+							*(ptr + i + m * n) = (rand() % 100);
 						}
 
 						printing(ptr, n);
 					}
 				}
 			}
-			return 0;
 			break;
 		}
 
@@ -133,6 +127,11 @@ int main()
 			break;
 		}
 
+		}
+		if (choise == 1 || choise == 2)
+		{
+			choise = 0;
+			break;
 		}
 	}
 
@@ -210,6 +209,11 @@ int main()
 			break;
 		}
 		}
+		if (choise == 1 || choise == 2 || choise == 3 || choise == 4)
+		{
+			choise = 0;
+			break;
+		}
 	}
 
 	cout << endl << "Отсортированный массив (сортировка пузырьком):" << endl;
@@ -239,10 +243,9 @@ int main()
 			cin >> helper;
 			for (int a = 0; a < n * n; a++)
 			{
-				*(ptr + a) = *(ptr + a) + helper;
+				*(ptr + a) = float(*(ptr + a)) + helper;
 			}
 			printing(ptr, n);
-			return 0;
 			break;
 		}
 
@@ -252,10 +255,9 @@ int main()
 			cin >> helper;
 			for (int a = 0; a < n * n; a++)
 			{
-				*(ptr + a) = *(ptr + a) - helper;
+				*(ptr + a) = float(*(ptr + a)) - helper;
 			}
 			printing(ptr, n);
-			return 0;
 			break;
 		}
 
@@ -265,10 +267,9 @@ int main()
 			cin >> helper;
 			for (int a = 0; a < n * n; a++)
 			{
-				*(ptr + a) = *(ptr + a) + helper;
+				*(ptr + a) = float(*(ptr + a)) * helper;
 			}
 			printing(ptr, n);
-			return 0;
 			break;
 		}
 
@@ -278,10 +279,9 @@ int main()
 			cin >> helper;
 			for (int a = 0; a < n * n; a++)
 			{
-				*(ptr + a) = *(ptr + a) / helper;
+				*(ptr + a) = float(*(ptr + a)) / helper;
 			}
 			printing(ptr, n);
-			return 0;
 			break;
 		}
 
@@ -291,7 +291,18 @@ int main()
 			break;
 		}
 		}
+		if (choise == 1 || choise == 2 || choise == 3 || choise == 4)
+		{
+			choise = 0;
+			break;
+		}
 	}
+
+	for (int i = 0; i < n; i++)
+	{
+		delete[] arr[i];
+	}
+	delete[] arr;
 
 	return 0;
 }
