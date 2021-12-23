@@ -52,42 +52,42 @@ int main()
 		case (1):
 		{
 			//----ЗАПОЛНЕНИЕ УЛИТКОЙ----//
-				for (int i = 0; i < n / 2; i++)
+			for (int i = 0; i < n / 2; i++)
+			{
+				//----1 ВИД СТРОК-----//
+
+				for (int j = 0 + i; j < (n - 1 - i); j++)
 				{
-					//----1 ВИД СТРОК-----//
-
-					for (int j = 0 + i; j < (n - 1 - i); j++)
-					{
-						*(ptr + j + i * n) = (rand() % 100);
-					}
-					printing(ptr, n);
-
-					//----2 ВИД СТРОК-----//
-
-					pom = -1;
-					for (int k = i; k < n - i - 1; k++)
-					{
-						pom += 1;
-						*(ptr + (n - 1) * (i + 1) + n * pom) = (rand() % 100);
-					}
-					printing(ptr, n);
-
-					//----3 ВИД СТРОК-----//
-
-					for (int l = 0 + i; l < n - 1 - i; l++)
-					{
-						*(ptr + (n * n - 1) - l - n * i) = (rand() % 100);
-					}
-					printing(ptr, n);
-
-					//----4 ВИД СТРОК-----//
-
-					for (int m = n - i - 1; m > i; m--)
-					{
-						*(ptr + i + m * n) = (rand() % 100);
-					}
-					printing(ptr, n);
+					*(ptr + j + i * n) = (rand() % 100);
 				}
+				printing(ptr, n);
+
+				//----2 ВИД СТРОК-----//
+
+				pom = -1;
+				for (int k = i; k < n - i - 1; k++)
+				{
+					pom += 1;
+					*(ptr + (n - 1) * (i + 1) + n * pom) = (rand() % 100);
+				}
+				printing(ptr, n);
+
+				//----3 ВИД СТРОК-----//
+
+				for (int l = 0 + i; l < n - 1 - i; l++)
+				{
+					*(ptr + (n * n - 1) - l - n * i) = (rand() % 100);
+				}
+				printing(ptr, n);
+
+				//----4 ВИД СТРОК-----//
+
+				for (int m = n - i - 1; m > i; m--)
+				{
+					*(ptr + i + m * n) = (rand() % 100);
+				}
+				printing(ptr, n);
+			}
 			break;
 		}
 
